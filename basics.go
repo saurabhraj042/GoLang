@@ -2,14 +2,20 @@ package main
 
 import "fmt"
 
-const helloAgainPrefix = "Hello, "
+const englishHelloAgainPrefix = "Hello, "
+const frenchHelloAgainPrefix = "Bonjour, "
+const french = "French"
 
-func HelloAgain(name string) string{
+func HelloAgain(name string, language string) string{
 	if name == ""{
 		name = "World"
 	}
 
-	return helloAgainPrefix + name
+	if language == french{
+		return frenchHelloAgainPrefix + name
+	}
+
+	return englishHelloAgainPrefix + name
 }
 
 func Hello() string{

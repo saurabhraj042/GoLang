@@ -21,15 +21,24 @@ func TestHelloAgain(t *testing.T){
 	}
 
 	t.Run("saying hello to people", func(t *testing.T) {
-		got := HelloAgain("Raj")
+		got := HelloAgain("Raj", "")
 		want := "Hello, Raj"
 
 		assertCorrectMessage(t, got, want)
 	})
 
 	t.Run("empty string defaults to 'World'", func(t *testing.T) {
-		got := HelloAgain("")
+		got := HelloAgain("", "")
 		want := "Hello, World"
+
+		assertCorrectMessage(t, got, want)
+	})
+
+	// Subtest to check if Language parameter is passed
+
+	t.Run("in French", func(t *testing.T) {
+		got := HelloAgain("Raj", "French")
+		want := "Bonjour, Raj"
 
 		assertCorrectMessage(t, got, want)
 	})
