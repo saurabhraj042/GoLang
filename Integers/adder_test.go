@@ -1,6 +1,9 @@
 package integers
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 // Function to test the Adder() function
 func TestAdder(t *testing.T){
@@ -10,4 +13,11 @@ func TestAdder(t *testing.T){
 	if got != want{
 		t.Errorf("got %d want %d", got, want)
 	}
+}
+
+// Example for Adder() function
+func ExampleAdder() {
+	got := Adder(3, 2)
+	fmt.Println(got)
+	// Output: 5
 }
