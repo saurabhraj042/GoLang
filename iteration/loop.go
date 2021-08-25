@@ -1,5 +1,6 @@
 package iteration
 
+// Basic looping function
 func Repeat(arg string, n int) string {
 	var repeated string
 
