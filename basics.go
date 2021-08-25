@@ -16,6 +16,7 @@ func HelloAgain(name string, language string) string{
 	return greetingPrefix(language) + name
 }
 
+// Helper function to get the Greeting Prefix
 func greetingPrefix(language string) (prefix string){
 	switch language {
 	case french:
