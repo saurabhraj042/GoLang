@@ -22,5 +22,13 @@ func TestSum(t *testing.T){
 		assertCorrectMessage(t, got, want)
 	})
 
-	
+	// Subtest for variable size array
+	t.Run("collection of any size", func(t *testing.T) {
+		numbers := []int{1, 2, 3}
+
+		got := Sum(numbers)
+		want := 6
+
+		assertCorrectMessage(t, got, want)
+	})
 }
