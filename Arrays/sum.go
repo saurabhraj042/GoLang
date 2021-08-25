@@ -10,3 +10,8 @@ func Sum(numbers []int) int {
 
 	return sum
 }
+
+// Function to return sum of given Slices as an Slice itself
+func SumAll(numbers ...[]int) (sums []int){
+	return
+}
