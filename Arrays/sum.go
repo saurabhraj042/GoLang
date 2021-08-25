@@ -22,8 +22,12 @@ func SumAll(numbersToSum ...[]int) (sums []int){
 // Function to find the Sum of Tails of given Slices
 func SumTails(numbersToSum ...[]int) (sums []int) {
 	for _, numbers := range numbersToSum {
-		tail := numbers[1:]
-		sums = append(sums, Sum(tail))
+		if len(numbers) == 0 {
+			sums = append(sums, 0)
+		}else{
+			tail := numbers[1:]
+			sums = append(sums, Sum(tail))
+		}
 	}
 	return
 }
