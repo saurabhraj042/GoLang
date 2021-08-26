@@ -9,11 +9,25 @@ func TestSearch(t *testing.T) {
 			t.Errorf("got %q want %q", got, want)
 		}
 	}
+
+	dictionary := Dictionary{"test":"This is test"}
+
 	t.Run("known word", func(t *testing.T) {
-		dictionary := Dictionary{"test":"This is test"}
-		got := dictionary.Search("test")
+		got, _ := dictionary.Search("test")
 		want := "This is test"
 
 		assertStrings(t, got, want)
+	})
+
+	// We expect to get err != nil
+	t.Run("unknown word", func(t *testing.T) {
+		_, gotErr := dictionary.Search("huihui")
+		want := "word not found"
+
+		if gotErr == nil {
+			t.Fatal("expected to get an error")
+		}
+
+		assertStrings(t, gotErr.Error(), want)
 	})
 }
